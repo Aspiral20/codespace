@@ -1,0 +1,19 @@
+*, body, button, nav, p, a, section, li, ul, ol, input, img h1, h2, h3, h4, h5, h6, {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+body {
+  @include FontRegular;
+  background-color: #373e47;
+  background-image: url("./img/bg.jpg");
+  background-repeat: repeat;
+  @include WorldTextFontSize;
+  @include WorldTextColor(#e4e4e4);
+  line-height: 18px;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.75);
+}
