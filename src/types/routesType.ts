@@ -1,17 +1,24 @@
 import React from "react";
 
+type indexOrPath = {
+  index?: boolean
+} | {
+  path?: string
+}
 
 export type RoutesType = {
   id: string
-  element: React.ReactNode
   index?: boolean
   path?: string
+  element: React.ReactNode
+  value: string
   subRoutes?: Array<RoutesSubtype>
 }
 
 export type RoutesSubtype = {
   id: string
-  element: React.ReactNode
   index?: boolean
   path?: string
+  element: React.ReactNode
+  value: string
 }

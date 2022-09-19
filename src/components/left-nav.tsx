@@ -1,12 +1,20 @@
 import React, { FC } from 'react';
 import { LeftContentType } from "../types/course_js/leftContent";
+import { Link } from "react-router-dom";
+import cn from "classnames";
+import { RoutesType } from "../types/routesType";
 
 interface LeftNavProps {
   content: LeftContentType,
-  widthContainer?: number
+  widthContainer?: number,
+  currentRoute?: RoutesType
 }
 
-const LeftNav: FC<LeftNavProps> = ({ content, widthContainer }) => {
+const LeftNav: FC<LeftNavProps> = ({
+  content,
+  widthContainer,
+  currentRoute
+}) => {
   return (
     <div className={'left-nav'} style={{ width: widthContainer }}>
       {content.map(({ id, title, text, list }) => (
@@ -27,12 +35,22 @@ const LeftNav: FC<LeftNavProps> = ({ content, widthContainer }) => {
           )}
           {list && list !== [] && (
             <div className="left-nav_item-list">
+                {/*{subRoutes ? subRoutes.map(subRouter => (*/}
+                {/*  <>*/}
+                {/*    <Link key={subRouter.id} to={path + '/' + subRouter.path}>*/}
+                {/*      <div className={cn('item', {active: pathname.includes(path)})}>{subRouter.value}</div>*/}
+                {/*    </Link>*/}
+                {/*  </>*/}
+                {/*)) : null}*/}
+
+
               {list.map(({ id, name }) => {
+                console.log(currentRoute)
                 return (
-                  <div key={id} className="list-item">
+                  <Link key={id} to={`${currentRoute?.path}/id=${id}`} className="list-item">
                     <div className="triangle"></div>
                     {name}
-                  </div>
+                  </Link>
                 )
               })}
             </div>

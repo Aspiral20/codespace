@@ -1,4 +1,4 @@
-import { LeftContentType } from "../../types/course_js/leftContent";
+import { LeftContentType } from "../../../types/course_js/leftContent";
 
 export const leftContent: LeftContentType  = [
   {

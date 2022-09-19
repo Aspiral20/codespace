@@ -19,20 +19,11 @@ const Header: FC<HeaderProps> = ({}) => {
         </div>
       </Link>
       <div className="menu">
-        {getRouter.map(({ id, path, value, index, subRoutes }) => (
+        {getRouter.map(({ id, path, value, index }) => (
           <>
             <Link key={id} to={path ? path : '/'}>
               <div className={cn('item', { active: path && pathname.includes(path) })}>{value}</div>
             </Link>
-            {/*<div className="open_subRouter_menu active">*/}
-            {/*  {subRoutes ? subRoutes.map(subRouter => (*/}
-            {/*    <>*/}
-            {/*      <Link key={subRouter.id} to={path + '/' + subRouter.path}>*/}
-            {/*        <div className={cn('item', {active: pathname.includes(path)})}>{subRouter.value}</div>*/}
-            {/*      </Link>*/}
-            {/*    </>*/}
-            {/*  )) : null}*/}
-            {/*</div>*/}
           </>
         ))}
       </div>

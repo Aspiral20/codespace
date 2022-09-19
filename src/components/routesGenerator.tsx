@@ -12,7 +12,7 @@ const RoutesGenerator = () => {
             {item.subRoutes && item.subRoutes !== [] ?
               <Route key={item.id} path={item.path} element={item.element}>
                 {item.subRoutes.map(subItem => (
-                    <Route key={subItem.id} path={subItem.path} element={subItem.element}/>
+                    <Route key={subItem.id} path={'?id=' + subItem.path} element={subItem.element}/>
                   )
                 )}
               </Route>
