@@ -4,7 +4,6 @@ import * as Sentry from "@sentry/react"
 import { Outlet } from "react-router-dom";
 
 function App() {
-
   return (
     <>
       <RoutesGenerator/>

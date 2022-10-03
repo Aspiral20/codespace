@@ -1,11 +1,50 @@
-import { Home, CourseJS, Prototype } from "../pages";
+import {
+  Home,
+  CourseJS,
+  Prototype,
+  Context,
+  Closures,
+  Async,
+  PromiseElement,
+  Objects,
+  Classes,
+  AsyncAwait,
+  Proxy,
+  Generators,
+  Arrays,
+} from "../pages";
 import NotFound from "../pages/not-found";
 
 export const getRouter = [
-  { id: 'Home', index: true, element: <Home/>, value: 'Home' },
-  { id: 'CourseJS', path: 'high-course-js', element: <CourseJS/>, value: 'High Course Js', subRoutes: [
-      { id: 'prototype', path: `?id=prototype`, element: <Prototype/>, value: 'Prototype' },
+  {
+    id: 'Home',
+    index: true,
+    element: <Home/>,
+    value: 'Home'
+  },
+  {
+    id: 'CourseJS',
+    path: 'high-course-js',
+    element: <CourseJS/>,
+    value: 'High Course Js',
+    subRoutes: [
+      { id: 'prototype', path: `prototype`, element: <Prototype/>, value: 'Prototype' },
+      { id: 'context', path: `context`, element: <Context/>, value: 'Context (this)' },
+      { id: 'closures', path: `closures`, element: <Closures/>, value: 'Closures' },
+      { id: 'async', path: `async`, element: <Async/>, value: 'Async (setTimeout)' },
+      { id: 'promise', path: `promise`, element: <PromiseElement/>, value: 'Promise' },
+      { id: 'objects', path: `objects`, element: <Objects/>, value: 'Objects' },
+      { id: 'classes', path: `classes`, element: <Classes/>, value: 'Classes' },
+      { id: 'asyncAwait', path: `asyncAwait`, element: <AsyncAwait/>, value: 'AsyncAwait' },
+      { id: 'proxy', path: `proxy`, element: <Proxy/>, value: 'Proxy' },
+      { id: 'generators', path: `generators`, element: <Generators/>, value: 'Generators' },
+      { id: 'arrays', path: `arrays`, element: <Arrays/>, value: 'Arrays' },
     ]
   },
-  { id: 'NotFound-page', path: '*', element: <NotFound/>}
+  {
+    id: 'NotFound-page',
+    path: '*',
+    element: <NotFound/>,
+    value: ''
+  }
 ]

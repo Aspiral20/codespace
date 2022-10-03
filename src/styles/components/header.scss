@@ -50,4 +50,14 @@
       }
     }
   }
+  .language {
+    @include flex_justify-align;
+    padding: 15px 20px;
+    .current-lang {
+      @include WorldTextFontSize(16px, 14px, 14px);
+      cursor: pointer;
+      color: black;
+      text-shadow: 0 1px 0 white;
+    }
+  }
 }

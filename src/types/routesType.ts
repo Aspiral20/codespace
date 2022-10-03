@@ -19,6 +19,5 @@ export type RoutesSubtype = {
   id: string
   index?: boolean
   path?: string
-  element: React.ReactNode
   value: string
 }

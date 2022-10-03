@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import * as Sentry from "@sentry/react";
 import { BrowserTracing } from "@sentry/tracing";
 import './styles/index.scss';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
+
+import './i18n';
+
+import rootReducer from './reducers';
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
 // process.env.NODE_ENV = "production" &&
 Sentry.init({
@@ -16,11 +23,15 @@ Sentry.init({
   tracesSampleRate: 1.0,
 });
 
+// const store = createStore(rootReducer)
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <BrowserRouter>
-    <App/>
+    {/*<Provider store={store}>*/}
+      <App/>
+    {/*</Provider>*/}
   </BrowserRouter>
 );

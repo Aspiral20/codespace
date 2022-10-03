@@ -1,22 +1,24 @@
 // Flex
 @mixin flex_justify($display: flex, $justifyContent: center) {
-  @if($display == flex) {
+  @if ($display == flex) {
     display: $display;
     justify-content: $justifyContent;
   } @else {
     display: $display;
   }
 }
+
 @mixin flex_align($display: flex, $alignItems: center) {
-  @if($display == flex) {
+  @if ($display == flex) {
     display: $display;
     align-items: $alignItems;
   } @else {
     display: $display;
   }
 }
+
 @mixin flex_justify-align($display: flex, $justifyContent: center, $alignItems: center) {
-  @if($display == flex) {
+  @if ($display == flex) {
     display: $display;
     justify-content: $justifyContent;
     align-items: $alignItems;
@@ -24,8 +26,9 @@
     display: $display;
   }
 }
+
 @mixin flex-wrap($display: flex, $wrap: wrap) {
-  @if($display == flex) {
+  @if ($display == flex) {
     display: $display;
     flex-wrap: $wrap
   } @else {
@@ -38,22 +41,27 @@
   width: $size;
   height: $size;
 }
+
 @mixin max_width-height($size) {
   max-width: $size;
   max-height: $size;
 }
+
 @mixin min_width-height($size) {
   min-width: $size;
   min-height: $size;
 }
+
 @mixin min-max_width($size) {
   max-width: $size;
   min-width: $size;
 }
+
 @mixin min-max_height($size) {
   max-height: $size;
   min-height: $size;
 }
+
 @mixin min-max_width-height($size) {
   max-width: $size;
   max-height: $size;
@@ -66,6 +74,7 @@
   margin-left: $size;
   margin-right: $size;
 }
+
 @mixin margin_top-bottom($size) {
   margin-top: $size;
   margin-bottom: $size;
@@ -76,6 +85,7 @@
   padding-left: $size;
   padding-right: $size;
 }
+
 @mixin padding_top-bottom($size) {
   padding-top: $size;
   padding-bottom: $size;
@@ -89,7 +99,7 @@
 
 // Parallax
 @mixin parallax($url: '') {
-  @if($url != '') {
+  @if ($url != '') {
     background-image: url($url);
   }
   background-attachment: fixed;
@@ -97,4 +107,8 @@
   background-size: cover;
   width: 100vw;
   height: 100vh;
+}
+
+@mixin codeSpace($number: 2, $addNumber: 0) {
+  padding-left: $addNumber + $number * 5px;
 }

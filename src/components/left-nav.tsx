@@ -5,8 +5,8 @@ import cn from "classnames";
 import { RoutesType } from "../types/routesType";
 
 interface LeftNavProps {
-  content: LeftContentType,
-  widthContainer?: number,
+  content: LeftContentType
+  widthContainer?: number
   currentRoute?: RoutesType
 }
 
@@ -15,6 +15,8 @@ const LeftNav: FC<LeftNavProps> = ({
   widthContainer,
   currentRoute
 }) => {
+  const location = window.location.pathname;
+
   return (
     <div className={'left-nav'} style={{ width: widthContainer }}>
       {content.map(({ id, title, text, list }) => (
@@ -33,26 +35,23 @@ const LeftNav: FC<LeftNavProps> = ({
               ))}
             </div>
           )}
-          {list && list !== [] && (
+          {id === 'course_content' ? (
             <div className="left-nav_item-list">
-                {/*{subRoutes ? subRoutes.map(subRouter => (*/}
-                {/*  <>*/}
-                {/*    <Link key={subRouter.id} to={path + '/' + subRouter.path}>*/}
-                {/*      <div className={cn('item', {active: pathname.includes(path)})}>{subRouter.value}</div>*/}
-                {/*    </Link>*/}
-                {/*  </>*/}
-                {/*)) : null}*/}
-
-
-              {list.map(({ id, name }) => {
-                console.log(currentRoute)
-                return (
-                  <Link key={id} to={`${currentRoute?.path}/id=${id}`} className="list-item">
-                    <div className="triangle"></div>
-                    {name}
-                  </Link>
-                )
-              })}
+              {currentRoute && currentRoute.subRoutes?.map(({ id, path, value }) => (
+                <Link key={id} to={`${path}`} className="list-item">
+                  <div className="triangle"></div>
+                  {value}
+                </Link>
+              ))}
+            </div>
+          ) : list && list !== [] && (
+            <div className="left-nav_item-list">
+              {list.map(({ id, name }) => (
+                <Link key={id} to={`${id}`} className="list-item">
+                  <div className="triangle"></div>
+                  {name}
+                </Link>
+              ))}
             </div>
           )}
         </div>

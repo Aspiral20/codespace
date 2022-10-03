@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Route, Routes } from "react-router-dom";
 import { getRouter } from "../conf/RouteElements";
-import { Body } from "../pages";
+import { Body, Home, Prototype, Context, CourseJS } from "../pages";
 
 const RoutesGenerator = () => {
   return (
     <Routes>
       <Route path='/' element={<Body/>}>
-        {getRouter.map(item => {
-          return <>
+        {getRouter.map(item => (
+          <Fragment key={item.id}>
             {item.subRoutes && item.subRoutes !== [] ?
               <Route key={item.id} path={item.path} element={item.element}>
                 {item.subRoutes.map(subItem => (
-                    <Route key={subItem.id} path={'?id=' + subItem.path} element={subItem.element}/>
+                    <Route key={subItem.id} path={subItem.path} element={subItem.element}/>
                   )
                 )}
               </Route>
@@ -21,8 +21,8 @@ const RoutesGenerator = () => {
                 :
                 <Route key={item.id} path={item.path} element={item.element}/>
             }
-          </>
-        })}
+          </Fragment>
+        ))}
       </Route>
     </Routes>
   );

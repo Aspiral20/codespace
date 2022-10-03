@@ -17,6 +17,6 @@ Object.prototype.sayHello = function () {
 // Creeaza obiecte noi. (ca parametru v-a fi prototip pentru obiectul creat)
 const lena = Object.create(person)
 lena.name = 'Elena';
-
+lena.sayHello();
 //
 // const str = new String('I am string');
