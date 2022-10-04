@@ -1,0 +1,23 @@
+.default-list {
+  padding-left: 16px;
+  margin-bottom: 17px;
+  .default-item {
+    position: relative;
+    padding: 4px 0;
+    .default-index {
+      position: absolute;
+      left: -15px;
+    }
+    .default-circle {
+      position: absolute;
+      left: -15px;
+      top: 6px;
+      @include min-max_width-height(4px);
+      border-radius: 50%;
+      background-color: #e4e4e4;
+    }
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

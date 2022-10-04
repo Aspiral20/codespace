@@ -6,6 +6,7 @@ import Footer from './footer'
 import DefaultText from './default-text'
 import DefaultTitle from './default-title'
 import DefaultCode from './default-code'
+import DefaultList from './default-list'
 
 export {
   Test,
@@ -15,5 +16,6 @@ export {
   Footer,
   DefaultText,
   DefaultTitle,
-  DefaultCode
+  DefaultCode,
+  DefaultList,
 }

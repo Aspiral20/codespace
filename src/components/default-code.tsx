@@ -1,28 +1,41 @@
 import React, { FC, useState } from 'react';
+import { codeItemContent } from "../pages/course_js/content/content_page";
 
 
 interface ContextTextProps {
-  children: React.ReactNode
+  children: React.ReactNode,
+  mode?: string
 }
 
-interface ClipboardProps {
+interface DefaultCodeProps {
   clipboard?: string
+  codeContent: codeItemContent
 }
 
-export const JsCode: FC<ContextTextProps> = ({ children }) => (
-  <span className={'js-code'}>{children}</span>
+export const CreateJS: FC<ContextTextProps> = ({ children,mode }) => (
+  <span className={'create-js'} style={{fontStyle: mode}}>{children}</span>
 )
 
-export const ObjectField: FC<ContextTextProps> = ({ children }) => (
-  <span className={'object-field'}>{children}</span>
+export const JsCode: FC<ContextTextProps> = ({ children,mode }) => (
+  <span className={'js-code'} style={{fontStyle: mode}}>{children}</span>
 )
 
-export const Commentaries: FC<ContextTextProps> = ({ children }) => (
-  <span className={'commentaries'}>{children}</span>
+export const ObjectField: FC<ContextTextProps> = ({ children, mode }) => (
+  <span className={'object-field'} style={{fontStyle: mode}}>{children}</span>
 )
 
+export const Numbers: FC<ContextTextProps> = ({ children,mode }) => (
+  <span className={'numbers'} style={{fontStyle: mode}}>{children}</span>
+)
 
-const DefaultCode: FC<ContextTextProps & ClipboardProps> = ({ children, clipboard }) => {
+export const Commentaries: FC<ContextTextProps> = ({ children,mode }) => (
+  <span className={'commentaries'} style={{fontStyle: mode}}>{children}</span>
+)
+
+const DefaultCode: FC<DefaultCodeProps> = ({
+  clipboard,
+  codeContent
+}) => {
   const [copyClipboard, setCopyClipboard] = useState<boolean>(false);
 
   const copyToClipboard = (str: string | undefined) => {
@@ -42,7 +55,11 @@ const DefaultCode: FC<ContextTextProps & ClipboardProps> = ({ children, clipboar
   return (
     <>
       <div className={'default-code'}>
-        {children}
+        {codeContent.map(({ id, codeItem , className }) => (
+          <div key={id} className={className}>
+            {codeItem}
+          </div>
+        ))}
         {clipboard && <div className="copy" onClick={() => {
           setCopyClipboard(true)
           setTimeout(() => setCopyClipboard(false), 3000)

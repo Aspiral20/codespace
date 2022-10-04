@@ -1,22 +1,25 @@
 .default-code {
   //@include padding_left-right(8px);
   @include padding_top-bottom(4px);
-  background-color: rgba(43,43,43,.5);
+  background-color: rgba(43, 43, 43, .5);
   margin-bottom: 17px;
   position: relative;
+
   .copy {
     @include WorldTextFontSize(16px, 14px, 14px);
     color: black;
     text-shadow: 0 1px 0 white;
     position: absolute;
-    right: 4px;
-    top: 4px;
+    right: 6px;
+    top: 6px;
     padding: 6px;
     border-radius: 7px;
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(43, 43, 43, 0.5);
     cursor: pointer;
     transition: .5s;
+    opacity: .9;
+
     &:hover {
       transition: .5s;
       background-color: white;
@@ -27,28 +30,44 @@
   .code-row {
     padding: 4px 0;
     padding-left: 8px;
+
     .js-code {
       color: orange;
     }
+
     .object-field {
-      color: rgba(152,118,170);
+      color: rgba(152, 118, 170);
     }
+
     .commentaries {
-      color: rgba(105,133,88);
+      color: rgba(105, 133, 88);
     }
+
+    .numbers {
+      color: rgb(104, 151, 187);
+    }
+
+    .create-js {
+      color: darkorange;
+    }
+
     &:hover {
-      background-color: rgba(50,50,50,.5);
+      background-color: rgba(50, 50, 50, .5);
     }
   }
+
   .code-row-2space {
     @include codeSpace(2, 8);
   }
+
   .code-row-4space {
     @include codeSpace(4, 8);
   }
+
   .end-code-row {
     padding-left: 0;
   }
+
   &:last-child {
     margin-bottom: 0;
   }
