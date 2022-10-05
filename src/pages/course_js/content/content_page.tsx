@@ -147,7 +147,7 @@ export const getCourseJSContent = {
           content: [
             {
               id: 1,
-              listItem: <><b>Bind</b> - returneaza o nou functie cu care schimba obiectul din parametru, cu obiectul
+              listItem: <><b>Bind</b> - returneaza o noua functie cu care schimba obiectul din parametru, cu obiectul
                 current. Cu alte cuvinte, leaga obiectul din parametru dat pentru {'->'} (this) facandul parinte.
               </>
             },
@@ -194,7 +194,8 @@ export const getCourseJSContent = {
             },
             {
               id: 2,
-              codeItem: <><ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>"Hello\n"</Commentaries>, <JsCode>this</JsCode>)</>,
+              codeItem: <>
+                <ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>"Hello\n"</Commentaries>, <JsCode>this</JsCode>)</>,
               className: 'code-row code-row-2space'
             },
             {
@@ -222,19 +223,6 @@ export const getCourseJSContent = {
                 <CreateJS>const</CreateJS> <ObjectField>person</ObjectField> = {'{'}
               </>,
               className: 'code-row'
-
-              //   name: 'Vladilen',
-              //   age: 25,
-              //   sayHello: hello,
-              //   sayHelloWindow: hello.bind(document),
-              //   logInfo: function (job, phone) {
-              //   console.group(`${this.name} info`)
-              //   console.log(`Name is ${this.name}`)
-              //   console.log(`Have ${this.age} age`)
-              //   console.log(`Job is ${job}`)
-              //   console.log(`Phone is ${phone}`)
-              //   console.groupEnd()
-              // {'}'}
             },
             {
               id: 2,
@@ -254,37 +242,46 @@ export const getCourseJSContent = {
             },
             {
               id: 5,
-              codeItem: <><ObjectField>sayHelloWindow</ObjectField>: <JsCode>hello</JsCode>.<JsCode>bind</JsCode>(<ObjectField mode={'italic'}>document</ObjectField>)</>,
+              codeItem: <>
+                <ObjectField>sayHelloWindow</ObjectField>: <JsCode>hello</JsCode>.<JsCode>bind</JsCode>(<ObjectField
+                mode={'italic'}>document</ObjectField>)</>,
               className: 'code-row code-row-2space'
             },
             {
               id: 6,
-              codeItem: <><JsCode>logInfo</JsCode>: <CreateJS>function</CreateJS> (job<CreateJS>,</CreateJS> phone) {'{'}</>,
+              codeItem: <>
+                <JsCode>logInfo</JsCode>: <CreateJS>function</CreateJS> (job<CreateJS>,</CreateJS> phone) {'{'}</>,
               className: 'code-row code-row-2space'
             },
             {
               id: 7,
-              codeItem: <><ObjectField>console</ObjectField>.<JsCode>group</JsCode>(<Commentaries>`</Commentaries>{'${'}<JsCode>this</JsCode>.<ObjectField>name</ObjectField>{'}'} <Commentaries>info`</Commentaries>)</>,
+              codeItem: <><ObjectField>console</ObjectField>.<JsCode>group</JsCode>(<Commentaries>`</Commentaries>{'${'}<JsCode>this</JsCode>.<ObjectField>name</ObjectField>{'}'}
+                <Commentaries>info`</Commentaries>)</>,
               className: 'code-row code-row-4space'
             },
             {
               id: 8,
-              codeItem: <><ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>`Name is </Commentaries>{'${'}<JsCode>this</JsCode>.<ObjectField>name</ObjectField>{'}'})</>,
+              codeItem: <><ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>`Name
+                is </Commentaries>{'${'}<JsCode>this</JsCode>.<ObjectField>name</ObjectField>{'}'})</>,
               className: 'code-row code-row-4space'
             },
             {
               id: 9,
-              codeItem: <><ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>`Have `</Commentaries>{'${'}<JsCode>this</JsCode>.<ObjectField>name</ObjectField>{'}'} <Commentaries>age`</Commentaries>)</>,
+              codeItem: <><ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>`Have
+                `</Commentaries>{'${'}<JsCode>this</JsCode>.<ObjectField>name</ObjectField>{'}'}
+                <Commentaries>age`</Commentaries>)</>,
               className: 'code-row code-row-4space'
             },
             {
               id: 10,
-              codeItem: <><ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>`Job is `</Commentaries>{'${job}'}<Commentaries>`</Commentaries>)</>,
+              codeItem: <><ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>`Job is
+                `</Commentaries>{'${job}'}<Commentaries>`</Commentaries>)</>,
               className: 'code-row code-row-4space'
             },
             {
               id: 11,
-              codeItem: <><ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>`Phone is `</Commentaries>{'${phone}'}<Commentaries>`</Commentaries>)</>,
+              codeItem: <><ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>`Phone is
+                `</Commentaries>{'${phone}'}<Commentaries>`</Commentaries>)</>,
               className: 'code-row code-row-4space'
             },
             {
@@ -329,8 +326,89 @@ export const getCourseJSContent = {
         title: <>Closures</>
       },
       {
+        id: 'closures_info',
+        text: <><b>Closure (închidere)</b> - combinația unei funcții grupate împreună (închisă) cu referințe la starea ei înconjurătoare (mediul lexical). Cu alte cuvinte, o închidere vă oferă acces la domeniul de aplicare al unei funcții exterioare dintr-o funcție internă. În JavaScript, închiderile sunt create de fiecare dată când este creată o funcție, la momentul creării funcției. O mai putem numi, o functie in functie.</>
+      },
+      {
         id: 2,
-        text: <></>
+        text: <>Structura generala:</>
+      },
+      {
+        id: 3,
+        code: {
+          content: [
+            {
+              id: 1,
+              codeItem: <><CreateJS>function</CreateJS> <JsCode>urlGenerator</JsCode>(domain) {'{'}</>,
+              className: 'code-row'
+            },
+            {
+              id: 2,
+              codeItem: <><CreateJS>return</CreateJS> <CreateJS>function</CreateJS> (url) {'{'}</>,
+              className: 'code-row code-row-2space'
+            },
+            {
+              id: 3,
+              codeItem: <><CreateJS>return </CreateJS>
+                <Commentaries>`https//</Commentaries>{'${url}'}<Commentaries>.</Commentaries>{'${domain}'}<Commentaries>`</Commentaries></>,
+              className: 'code-row code-row-4space'
+            },
+            {
+              id: 4,
+              codeItem: <>{'}'}</>,
+              className: 'code-row code-row-2space'
+            },
+            {
+              id: 5,
+              codeItem: <>{'}'}</>,
+              className: 'code-row'
+            },
+          ],
+          clipboard: 'function urlGenerator(domain) {\n' +
+            '  return function (url) {\n' +
+            '    return `https//${url}.${domain}`\n' +
+            '  }\n' +
+            '}'
+        }
+      },
+      {
+        id: 4,
+        text: <>Se foloseste:</>
+      },
+      {
+        id: 5,
+        code: {
+          content: [
+            {
+              id: 1,
+              codeItem: <><CreateJS>const</CreateJS> <ObjectField>comUrl</ObjectField> = <JsCode>urlGenerator</JsCode>(<Commentaries>"com"</Commentaries>)</>,
+              className: 'code-row'
+            },
+            {
+              id: 2,
+              codeItem: <><CreateJS>const</CreateJS> <ObjectField>ruUrl</ObjectField> = <JsCode>urlGenerator</JsCode>(<Commentaries>"ru"</Commentaries>)</>,
+              className: 'code-row'
+            },
+          ],
+          clipboard: 'constcomUrl = urlGenerator("com")\n' +
+            'construUrl = urlGenerator("ru")'
+        }
+      },
+      {
+        id: 6,
+        text: <>Rezultat:</>
+      },
+      {
+        id: 7,
+        code: {
+          content: [
+            {
+              id: 1,
+              codeItem: <>https//google.com</>,
+              className: 'code-row'
+            }
+          ]
+        }
       },
     ]
   },
@@ -343,8 +421,131 @@ export const getCourseJSContent = {
       },
       {
         id: 2,
-        text: <></>
+        text: <>Sunt metodele/procedeele apelate in mod async (in <b>Web Api</b>), nu in <b>Call Stack</b></>
       },
+      {
+        id: 3,
+        text: <>Documentatia: <a href="http://latentflip.com/">http://latentflip.com/</a></>
+      },
+      {
+        id: 4,
+        text: <h5>Methods:</h5>
+      },
+      {
+        id: 5,
+        text: <>Metodele principale - <JsCode>setTimeout</JsCode>()</>
+      },
+      {
+        id: 5,
+        text: <h5>Examples:</h5>
+      },
+      {
+        id: 7,
+        code: {
+          content: [
+            {
+              id: 1,
+              codeItem: <><CreateJS>async</CreateJS> <CreateJS>function</CreateJS> <JsCode>getDataAPI</JsCode>() {'{'}</>,
+              className: 'code-row'
+            },
+            {
+              id: 2,
+              codeItem: <><CreateJS>try</CreateJS> {'{'}</>,
+              className: 'code-row code-row-2space'
+            },
+            {
+              id: 3,
+              codeItem: <>
+                <ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>"Starting..."</Commentaries>)
+              </>,
+              className: 'code-row code-row-4space'
+            },
+            {
+              id: 4,
+              codeItem: <>
+                <CreateJS>await</CreateJS>.<JsCode>delay</JsCode>(<Numbers>2000</Numbers>)
+              </>,
+              className: 'code-row code-row-4space'
+            },
+            {
+              id: 5,
+              codeItem: <>
+                <Commentaries>// Get data using fetch</Commentaries>
+              </>,
+              className: 'code-row code-row-4space'
+            },
+            {
+              id: 6,
+              codeItem: <>
+                <CreateJS>const</CreateJS> data = <CreateJS>await</CreateJS> <JsCode>fetch</JsCode>(<ObjectField mode={'italic'}>jsonURL</ObjectField>)
+              </>,
+              className: 'code-row code-row-4space'
+            },
+            {
+              id: 7,
+              codeItem: <>
+                <Commentaries>// Convert into json format</Commentaries>
+              </>,
+              className: 'code-row code-row-4space'
+            },
+            {
+              id: 8,
+              codeItem: <>
+                <CreateJS>const</CreateJS> jsonData = <CreateJS>await</CreateJS> data.<JsCode>json</JsCode>()
+              </>,
+              className: 'code-row code-row-4space'
+            },
+            {
+              id: 9,
+              codeItem: <>
+                <ObjectField>console</ObjectField>.<JsCode>log</JsCode>(<Commentaries>"Data: "</Commentaries><CreateJS>,</CreateJS> jsonData)
+              </>,
+              className: 'code-row code-row-4space'
+            },
+            {
+              id: 10,
+              codeItem: <>
+                {'}'} <CreateJS>catch</CreateJS> (e) {'{'}
+              </>,
+              className: 'code-row code-row-2space'
+            },
+            {
+              id: 11,
+              codeItem: <>
+                <ObjectField>console</ObjectField>.<JsCode>log</JsCode>(e)
+              </>,
+              className: 'code-row code-row-4space'
+            },
+            {
+              id: 12,
+              codeItem: <>
+                {'}'}
+              </>,
+              className: 'code-row code-row-2space'
+            },
+            {
+              id: 13,
+              codeItem: <>
+                {'}'}
+              </>,
+              className: 'code-row'
+            },
+          ],
+          clipboard: 'async function getDataAPI() {\n' +
+            '  try {\n' +
+            '    console.log(\'Starting...\')\n' +
+            '    await delay(2000)\n' +
+            '    // Get data using fetch\n' +
+            '    const data = await fetch(jsonURL)\n' +
+            '    // Convert into json format\n' +
+            '    const jsonData = await data.json()\n' +
+            '    console.log(\'Data: \', jsonData)\n' +
+            '  } catch (e) {\n' +
+            '    console.log(e)\n' +
+            '  }\n' +
+            '}'
+        }
+      }
     ]
   },
   promise: {

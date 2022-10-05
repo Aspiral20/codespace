@@ -12,7 +12,6 @@ interface PrototypeProps {
 
 const Prototype: FC<PrototypeProps> = ({}) => {
   const { prototype } = getCourseJSContent
-
   return (
     <>
       <CourseJsContentGenerator field={prototype}/>

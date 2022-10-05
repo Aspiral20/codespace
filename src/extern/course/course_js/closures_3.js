@@ -36,8 +36,8 @@
 //   }
 // }
 //
-// const comUrl = urlGenerator('com')
-// const ruUrl = urlGenerator('ru')
+const comUrl = urlGenerator('com')
+const ruUrl = urlGenerator('ru')
 //
 // console.log(comUrl('google'))
 // console.log(comUrl('netflix'))

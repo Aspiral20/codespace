@@ -37,7 +37,7 @@ const jsonURL = 'https://jsonplaceholder.typicode.com/todos'
 async function getDataAPI() {
   try {
     console.log('Starting...')
-    await delay(2000);
+    await delay(2000)
     // Get data using fetch
     const data = await fetch(jsonURL)
     // Convert into json format

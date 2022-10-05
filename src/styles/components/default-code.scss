@@ -1,3 +1,24 @@
+
+.js-code {
+  color: orange;
+}
+
+.object-field {
+  color: rgba(152, 118, 170);
+}
+
+.commentaries {
+  color: rgba(105, 133, 88);
+}
+
+.numbers {
+  color: rgb(104, 151, 187);
+}
+
+.create-js {
+  color: darkorange;
+}
+
 .default-code {
   //@include padding_left-right(8px);
   @include padding_top-bottom(4px);
@@ -19,6 +40,7 @@
     cursor: pointer;
     transition: .5s;
     opacity: .9;
+    font-size: 15px;
 
     &:hover {
       transition: .5s;
@@ -30,26 +52,6 @@
   .code-row {
     padding: 4px 0;
     padding-left: 8px;
-
-    .js-code {
-      color: orange;
-    }
-
-    .object-field {
-      color: rgba(152, 118, 170);
-    }
-
-    .commentaries {
-      color: rgba(105, 133, 88);
-    }
-
-    .numbers {
-      color: rgb(104, 151, 187);
-    }
-
-    .create-js {
-      color: darkorange;
-    }
 
     &:hover {
       background-color: rgba(50, 50, 50, .5);
