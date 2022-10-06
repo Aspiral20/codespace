@@ -1049,7 +1049,7 @@ export const getCourseJSContent = {
             {
               id: 2,
               codeItem: <>
-                <Commentaries>// Daca key se contine in object</Commentaries>
+                <Commentaries>// Daca key se contine in obiect</Commentaries>
               </>,
               className: 'code-row code-row-2space'
             },
@@ -1263,7 +1263,7 @@ export const getCourseJSContent = {
 
       {
         id: 1,
-        title: <>AsyncAwait</>
+        title: <>Async, Await</>
       },
       {
         id: 2,
