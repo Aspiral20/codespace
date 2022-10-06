@@ -11,7 +11,7 @@
     .default-circle {
       position: absolute;
       left: -15px;
-      top: 6px;
+      top: 11px;
       @include min-max_width-height(4px);
       border-radius: 50%;
       background-color: #e4e4e4;

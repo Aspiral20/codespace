@@ -12,8 +12,9 @@ import {
   Proxy,
   Generators,
   Arrays,
+  NotFound,
+  Settings
 } from "../pages";
-import NotFound from "../pages/not-found";
 
 export const getRouter = [
   {
@@ -35,11 +36,17 @@ export const getRouter = [
       { id: 'promise', path: `promise`, element: <PromiseElement/>, value: 'Promise' },
       { id: 'objects', path: `objects`, element: <Objects/>, value: 'Objects' },
       { id: 'classes', path: `classes`, element: <Classes/>, value: 'Classes' },
-      { id: 'asyncAwait', path: `asyncAwait`, element: <AsyncAwait/>, value: 'AsyncAwait' },
+      { id: 'asyncAwait', path: `asyncAwait`, element: <AsyncAwait/>, value: 'Async Await' },
       { id: 'proxy', path: `proxy`, element: <Proxy/>, value: 'Proxy' },
       { id: 'generators', path: `generators`, element: <Generators/>, value: 'Generators' },
       { id: 'arrays', path: `arrays`, element: <Arrays/>, value: 'Arrays' },
     ]
+  },
+  {
+    id: 'Settings',
+    path: 'settings',
+    element: <Settings/>,
+    value: 'Settings',
   },
   {
     id: 'NotFound-page',

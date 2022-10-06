@@ -134,7 +134,7 @@ Object.create({prototypeForFunctions}, {
 ...
   key: {
     value: value,
-    writable: true
+    configurable: true
   }
 ...
 

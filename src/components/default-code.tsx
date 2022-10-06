@@ -55,9 +55,14 @@ const DefaultCode: FC<DefaultCodeProps> = ({
   return (
     <>
       <div className={'default-code'}>
-        {codeContent.map(({ id, codeItem , className }) => (
-          <div key={id} className={className}>
-            {codeItem}
+        {codeContent.map(({ id, codeItem , className }, index) => (
+          <div key={id} className={'code-indexed-row'}>
+            <div className="code-index">
+              {++index}
+            </div>
+            <div  className={className}>
+              {codeItem}
+            </div>
           </div>
         ))}
         {clipboard && <div className="copy" onClick={() => {

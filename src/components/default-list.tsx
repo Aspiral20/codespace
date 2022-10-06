@@ -13,8 +13,8 @@ const DefaultList: FC<DefaultListProps> = ({ type, list }) => {
         <div className={'default-list'}>
           {list.map(({ id, listItem }, index) => (
             <div key={id} className={'default-item'}>
-              <div className="default-index">{++index}</div>
-              .{listItem}
+              <div className="default-index">{++index}.</div>
+              {listItem}
             </div>
           ))}
         </div>

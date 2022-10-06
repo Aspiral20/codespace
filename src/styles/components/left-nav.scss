@@ -1,6 +1,7 @@
 .left-nav {
   //float: left;
   margin-right: 15px;
+  @include min-max_width(220px);
   .left-nav_item {
     margin-bottom: 20px;
     background-color: #373e47;

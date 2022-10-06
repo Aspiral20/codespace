@@ -1,8 +1,8 @@
 import { FC, Fragment, useState } from "react";
-import { Link, Outlet, useRoutes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getRouter } from "../conf/RouteElements";
 import cn from 'classnames';
-import { setterLang } from "../optimized/functions";
+import { useTranslation } from "react-i18next";
 
 interface HeaderProps {
 
@@ -10,6 +10,9 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({}) => {
   const [openLang, setOpenLang] = useState<boolean>(false);
+  const {t, i18n} = useTranslation()
+
+  console.log(i18n.language)
 
   const lang = [
     { key: 'ro', lang: 'RO' },
@@ -29,9 +32,16 @@ const Header: FC<HeaderProps> = ({}) => {
       <div className="menu">
         {getRouter.map(({ id, path, value, index, subRoutes }) => (
           <Fragment key={id}>
-            {value !== '' ? <Link key={id} to={path ? subRoutes ? path + '/' + subRoutes[0].path : path : '/'}>
-              <div className={cn('item')}>{value}</div>
-            </Link> : null}
+            {value !== '' ?
+              <div key={id} className={cn('menu-item')}>
+                <Link
+                  to={path ? subRoutes ? path + '/' + subRoutes[0].path : path : '/'}
+                  className="item"
+                >
+                  {t(`pages.${id}`)}
+                </Link>
+              </div>
+              : null}
           </Fragment>
         ))}
       </div>
@@ -39,15 +49,22 @@ const Header: FC<HeaderProps> = ({}) => {
         <div className="current-lang" onClick={() => {
           setOpenLang(prevState => !prevState)
         }}>
-          {currentLang}
+          {i18n.language}
         </div>
         {openLang &&
           <div className={'change-lang'}>
-            {lang.map(lng => (
-              <div key={lng.key} className="lng-item" onClick={() => setCurrentLang(lng.lang)}>
-                {lng.lang !== currentLang && lng.lang}
-              </div>
-            ))}
+            {lang.map(lng => {
+              return (
+                <Fragment>
+                  {lng.key !== i18n.language && <div key={lng.key} className="lng-item" onClick={() => {
+                    i18n.changeLanguage(lng.key)
+                    setOpenLang(false)
+                  }}>
+                    {lng.lang}
+                  </div>}
+                </Fragment>
+              )
+            })}
           </div>
         }
       </div>

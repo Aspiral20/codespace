@@ -17,3 +17,9 @@ body {
   line-height: 18px;
   text-shadow: 0 1px 0 rgba(0,0,0,0.75);
 }
+.my-workspace-link {
+  color: #80b9cb;
+  &:hover {
+    color: lightskyblue;
+  }
+}

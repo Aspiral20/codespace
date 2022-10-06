@@ -7,6 +7,7 @@ import DefaultText from './default-text'
 import DefaultTitle from './default-title'
 import DefaultCode from './default-code'
 import DefaultList from './default-list'
+import DownloadSettings from './download-settings'
 
 export {
   Test,
@@ -18,4 +19,6 @@ export {
   DefaultTitle,
   DefaultCode,
   DefaultList,
+  DownloadSettings,
 }
+export * from './images'

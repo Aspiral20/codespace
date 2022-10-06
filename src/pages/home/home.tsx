@@ -9,9 +9,9 @@ const Home: FC<HomeProps> = ({}) => {
     <>
       <div className={"home"}>
         <div className={"home-container"}>
-          <h2 className="title">
-            High Course JavaScript
-          </h2>
+          <h3 className="title">
+            Aspiral20's Workspace
+          </h3>
         </div>
       </div>
     </>

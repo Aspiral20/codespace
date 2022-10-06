@@ -4,8 +4,6 @@ import { leftContent } from "./content/leftContent";
 import { Outlet } from "react-router-dom";
 import { getRouter } from "../../conf/RouteElements";
 import cn from "classnames";
-import { getCourseJSContent } from "./content/content_page";
-import { DefaultCode, DefaultText, DefaultTitle } from "../../components";
 
 interface CourseJSProps {
   children?: React.ReactNode
