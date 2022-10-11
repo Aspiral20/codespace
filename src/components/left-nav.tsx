@@ -37,8 +37,8 @@ const LeftNav: FC<LeftNavProps> = ({
           )}
           {id === 'course_content' ? (
             <div className="left-nav_item-list">
-              {currentRoute && currentRoute.subRoutes?.map(({ id, path, value }) => (
-                <Link key={id} to={`${path}`} className="list-item">
+              {currentRoute && currentRoute.subRoutes?.map(({ id, path, value, index }) => (
+                path !== '' && <Link key={id} to={`${path}`} className="list-item">
                   <div className="triangle"></div>
                   {value}
                 </Link>
@@ -48,7 +48,7 @@ const LeftNav: FC<LeftNavProps> = ({
             <div className="left-nav_item-list">
               {list.map(({ id, name }) => (
                 <Link key={id} to={`${id}`} className="list-item">
-                  <div className="triangle"></div>
+                  <div className="triangle"/>
                   {name}
                 </Link>
               ))}

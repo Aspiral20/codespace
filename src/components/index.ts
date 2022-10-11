@@ -8,6 +8,7 @@ import DefaultTitle from './default-title'
 import DefaultCode from './default-code'
 import DefaultList from './default-list'
 import DownloadSettings from './download-settings'
+import DefaultLink from './default-link'
 
 export {
   Test,
@@ -20,5 +21,6 @@ export {
   DefaultCode,
   DefaultList,
   DownloadSettings,
+  DefaultLink,
 }
 export * from './images'

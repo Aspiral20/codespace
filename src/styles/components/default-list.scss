@@ -1,12 +1,14 @@
+$orderedIndexPx: 26px;
+
 .default-list {
-  padding-left: 16px;
+  padding-left: $orderedIndexPx;
   margin-bottom: 17px;
   .default-item {
     position: relative;
     padding: 4px 0;
     .default-index {
       position: absolute;
-      left: -15px;
+      left: -$orderedIndexPx;
     }
     .default-circle {
       position: absolute;

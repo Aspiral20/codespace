@@ -2,6 +2,7 @@ import { Commentaries, CreateJS, JsCode, Numbers, ObjectField } from "../../../c
 import React, { FC, Fragment } from "react";
 import { DefaultCode, DefaultText, DefaultTitle } from "../../../components";
 import DefaultList from "../../../components/default-list";
+import DefaultLink from "../../../components/default-link";
 
 export type codeItemContent = Array<{
   id: number | string,
@@ -59,6 +60,132 @@ export const CourseJsContentGenerator: FC<courseJsContentGeneratorProps> = ({ fi
 }
 
 export const getCourseJSContent = {
+  cjs_start_page: {
+    id: 'cjs-start-page',
+    page: [
+      {
+        id: 1,
+        title: <>
+          JavaScript content:
+        </>,
+        list: {
+          content: [
+            {
+              id: 1,
+              listItem: <>
+                Prototype:&nbsp;
+                <DefaultLink 
+                  href={"https://www.youtube.com/watch?v=aQkgUUmUJy4&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=1"} 
+                  value={'https://www.youtube.com/watch?1'}
+                />
+              </>
+            },
+            {
+              id: 2,
+              listItem: <>
+                Context (this):&nbsp;
+                <DefaultLink
+                  href={"https://www.youtube.com/watch?v=UGapN-hrekw&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=2"}
+                  value={'https://www.youtube.com/watch?2'}
+                />
+              </>
+            },
+            {
+              id: 3,
+              listItem: <>
+                Closures:&nbsp;
+                <DefaultLink
+                  href={"https://www.youtube.com/watch?v=UGapN-hrekw&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=2"}
+                  value={'https://www.youtube.com/watch?3'}
+                />
+              </>
+            },
+            {
+              id: 4,
+              listItem: <>
+                Async (setTimeout):&nbsp;
+                <DefaultLink
+                  href={"https://www.youtube.com/watch?v=UGapN-hrekw&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=2"}
+                  value={'https://www.youtube.com/watch?4'}
+                />
+              </>
+            },
+            {
+              id: 5,
+              listItem: <>
+                Promise:&nbsp;
+                <DefaultLink
+                  href={"https://www.youtube.com/watch?v=UGapN-hrekw&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=2"}
+                  value={'https://www.youtube.com/watch?4'}
+                />
+              </>
+            },
+            {
+              id: 6,
+              listItem: <>
+                Objects:&nbsp;
+                <DefaultLink
+                  href={"https://www.youtube.com/watch?v=UGapN-hrekw&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=2"}
+                  value={'https://www.youtube.com/watch?4'}
+                />
+              </>
+            },
+            {
+              id: 7,
+              listItem: <>
+                Classes:&nbsp;
+                <DefaultLink
+                  href={"https://www.youtube.com/watch?v=UGapN-hrekw&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=2"}
+                  value={'https://www.youtube.com/watch?4'}
+                />
+              </>
+            },
+            {
+              id: 8,
+              listItem: <>
+                AsyncAwait:&nbsp;
+                <DefaultLink
+                  href={"https://www.youtube.com/watch?v=UGapN-hrekw&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=2"}
+                  value={'https://www.youtube.com/watch?4'}
+                />
+              </>
+            },
+            {
+              id: 9,
+              listItem: <>
+                Proxy:&nbsp;
+                <DefaultLink
+                  href={"https://www.youtube.com/watch?v=UGapN-hrekw&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=2"}
+                  value={'https://www.youtube.com/watch?4'}
+                />
+              </>
+            },
+            {
+              id: 10,
+              listItem: <>
+                Generators:&nbsp;
+                <DefaultLink
+                  href={"https://www.youtube.com/watch?v=UGapN-hrekw&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=2"}
+                  value={'https://www.youtube.com/watch?4'}
+                />
+              </>
+            },
+            {
+              id: 11,
+              listItem: <>
+                Arrays:&nbsp;
+                <DefaultLink
+                  href={"https://www.youtube.com/watch?v=UGapN-hrekw&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=2"}
+                  value={'https://www.youtube.com/watch?4'}
+                />
+              </>
+            },
+          ],
+          ordered: true
+        },
+      },
+    ]
+  },
   prototype: {
     id: 'prototype',
     page: [
@@ -437,8 +564,7 @@ export const getCourseJSContent = {
       },
       {
         id: 3,
-        text: <>Documentatia: <a href="http://latentflip.com/"
-                                 className={'my-workspace-link'}>http://latentflip.com/</a></>
+        text: <>Documentatia: <DefaultLink href={'http://latentflip.com/'} value={<>http://latentflip.com/</>}/></>
       },
       {
         id: 4,

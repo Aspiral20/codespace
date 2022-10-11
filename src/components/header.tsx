@@ -12,8 +12,6 @@ const Header: FC<HeaderProps> = ({}) => {
   const [openLang, setOpenLang] = useState<boolean>(false);
   const {t, i18n} = useTranslation()
 
-  console.log(i18n.language)
-
   const lang = [
     { key: 'ro', lang: 'RO' },
     { key: 'ru', lang: 'RU' },
@@ -30,12 +28,13 @@ const Header: FC<HeaderProps> = ({}) => {
         </div>
       </Link>
       <div className="menu">
-        {getRouter.map(({ id, path, value, index, subRoutes }) => (
+        {getRouter.map(({ id, path, value, index, subRoutes, header }) => (
           <Fragment key={id}>
-            {value !== '' ?
+            {value !== '' && header?
               <div key={id} className={cn('menu-item')}>
                 <Link
-                  to={path ? subRoutes ? path + '/' + subRoutes[0].path : path : '/'}
+                  // to={path ? subRoutes ? path + '/' + subRoutes[0].path : path : '/'}
+                  to={path ? path : '/'}
                   className="item"
                 >
                   {t(`pages.${id}`)}

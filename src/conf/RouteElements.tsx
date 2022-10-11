@@ -15,20 +15,24 @@ import {
   NotFound,
   Settings
 } from "../pages";
+import CjsStartPage from "../pages/course_js/subpages/cjs-startpage";
 
 export const getRouter = [
   {
     id: 'Home',
     index: true,
     element: <Home/>,
-    value: 'Home'
+    value: 'Home',
+    header: true,
   },
   {
     id: 'CourseJS',
     path: 'high-course-js',
     element: <CourseJS/>,
     value: 'High Course Js',
+    header: true,
     subRoutes: [
+      { id: 'cjs-start-page', path: '', index: true, element: <CjsStartPage/> },
       { id: 'prototype', path: `prototype`, element: <Prototype/>, value: 'Prototype' },
       { id: 'context', path: `context`, element: <Context/>, value: 'Context (this)' },
       { id: 'closures', path: `closures`, element: <Closures/>, value: 'Closures' },
@@ -47,6 +51,14 @@ export const getRouter = [
     path: 'settings',
     element: <Settings/>,
     value: 'Settings',
+    header: true
+  },
+  {
+    id: 'My-Workspace',
+    path: 'my-workspace',
+    element: <Home/>,
+    value: 'My Workspace',
+    header: false,
   },
   {
     id: 'NotFound-page',
