@@ -21,3 +21,5 @@
   - npm run deploy / yarn run deploy
 
 6) git push origin -u (main-branch)
+
+[*Deploy]: Enter x2 passphrase
