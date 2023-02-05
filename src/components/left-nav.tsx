@@ -1,25 +1,38 @@
 import React, { FC } from 'react';
-import { LeftContentType } from "../types/course_js/leftContent";
-import { Link } from "react-router-dom";
+import { LeftContentType } from "../@types/course_js/leftContent";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import cn from "classnames";
-import { RoutesType } from "../types/routesType";
+import useStringPath from "../hooks/useStringPath";
+import { BackArrow } from "./images";
+import { useTranslation } from "react-i18next";
 
 interface LeftNavProps {
   content: LeftContentType
   widthContainer?: number
-  currentRoute?: RoutesType
+  navArrowsLinks?: {
+    backNavLink: string,
+    forwardNavLink: string
+  }
 }
 
 const LeftNav: FC<LeftNavProps> = ({
   content,
   widthContainer,
-  currentRoute
+  navArrowsLinks
 }) => {
-  const location = window.location.pathname;
+  const { t } = useTranslation()
+  const { pathname } = useLocation()
+  const { lastChildPath } = useStringPath(pathname)
+  const navigate = useNavigate();
 
   return (
     <div className={'left-nav'} style={{ width: widthContainer }}>
-      {content.map(({ id, title, text, list }) => (
+      {navArrowsLinks && <div className="nav_arrow_container">
+        <BackArrow onClick={() => navigate(parseInt(navArrowsLinks.backNavLink))} className="left-nav_back-arrow-svg"/>
+        <div className="nav_text">{t('actions.navigation')}</div>
+        <BackArrow onClick={() => navigate(parseInt(navArrowsLinks.forwardNavLink))} className="left-nav_forward-arrow-svg"/>
+      </div>}
+      {content && content.map(({ id, title, text, list }) => (
         <div key={id} className="left-nav_item">
           {title && title !== '' && (
             <div className="title">
@@ -35,21 +48,12 @@ const LeftNav: FC<LeftNavProps> = ({
               ))}
             </div>
           )}
-          {id === 'course_content' ? (
+          {list && list !== [] && (
             <div className="left-nav_item-list">
-              {currentRoute && currentRoute.subRoutes?.map(({ id, path, value, index }) => (
-                path !== '' && <Link key={id} to={`${path}`} className="list-item">
-                  <div className="triangle"></div>
-                  {value}
-                </Link>
-              ))}
-            </div>
-          ) : list && list !== [] && (
-            <div className="left-nav_item-list">
-              {list.map(({ id, name }) => (
-                <Link key={id} to={`${id}`} className="list-item">
+              {list.map(({ id, linkPath, value }) => (
+                <Link key={id} to={`${linkPath}`} className={cn("list-item", { 'active': lastChildPath === linkPath })}>
                   <div className="triangle"/>
-                  {name}
+                  {value}
                 </Link>
               ))}
             </div>

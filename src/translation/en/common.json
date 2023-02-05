@@ -1,7 +1,16 @@
 {
   "pages": {
-    "Home": "Home",
-    "CourseJS": "JavaScript",
-    "Settings": "Settings"
+    "home": "Home",
+    "technologies": "Technologies",
+    "settings": "Settings",
+    "feedback": "Feedback"
+  },
+  "errors": {
+    "not-found": "This page does not exist.",
+    "not-found-link": "Go",
+    "not-found-path": "Home"
+  },
+  "actions": {
+    "navigation": "Navigation"
   }
 }

@@ -6,7 +6,7 @@ const Vscode: FC<React.SVGAttributes<SVGElement>> = ({
 }) => {
   return (
     <svg
-      className={className}
+      className={`vscode-svg ${className}`}
       {...rest}
       height="2455"
       viewBox="-11.9 -2 1003.9 995.6"

@@ -1,7 +1,16 @@
 {
   "pages": {
-    "Home": "Acasă",
-    "CourseJS": "JavaScript",
-    "Settings": "Setări"
+    "home": "Acasă",
+    "technologies": "Tehnologii",
+    "settings": "Setări",
+    "feedback": "Feedback"
+  },
+  "errors": {
+    "not-found": "Aceasta pagina nu exista.",
+    "not-found-link": "Treceti",
+    "not-found-path": "Acasă"
+  },
+  "actions": {
+    "navigation": "Navigare"
   }
 }

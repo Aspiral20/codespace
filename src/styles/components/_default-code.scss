@@ -1,0 +1,101 @@
+
+.js-code {
+  color: orange;
+}
+
+.object-field {
+  color: rgba(152, 118, 170);
+}
+
+.commentaries {
+  color: rgba(105, 133, 88);
+}
+
+.numbers {
+  color: rgb(104, 151, 187);
+}
+
+.create-js {
+  color: darkorange;
+}
+
+.default-code {
+  //@include padding_left-right(8px);
+  @include padding_top-bottom(4px);
+  background-color: rgba(43, 43, 43, .5);
+  margin-bottom: 17px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .code-indexed-row, .code-noIndex {
+    @include flex_justify-align(flex, flex-start);
+
+    &:hover {
+      background-color: rgba(50, 50, 50, .5);
+    }
+
+    .code-index {
+      @include flex_justify-align();
+      font-size: 13px;
+      width: 40px;
+      border-right: 1px solid rgb(129 129 129);
+      height: 100%;
+      color: rgb(179 179 179);
+    }
+
+    .code-row {
+      padding: 4px 0;
+      padding-left: 12px;
+
+    }
+
+    .code-row-2space {
+      @include codeSpace(3, 12);
+    }
+
+    .code-row-4space {
+      @include codeSpace(6, 12);
+    }
+
+    .end-code-row {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .copy {
+    @include WorldTextFontSize(16px, 14px, 14px);
+    color: black;
+    text-shadow: 0 1px 0 white;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    padding: 6px;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(43, 43, 43, 0.5);
+    cursor: pointer;
+    transition: .5s;
+    opacity: .9;
+    font-size: 15px;
+    z-index: 1;
+
+    &:hover {
+      transition: .5s;
+      background-color: white;
+      color: #a45f93;
+    }
+  }
+}

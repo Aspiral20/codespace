@@ -1,6 +1,5 @@
-import React, { FC, useState } from 'react';
-import { codeItemContent } from "../pages/course_js/content/content_page";
-
+import React, { FC, Fragment, useState } from 'react';
+import { CodeType } from "../@types/tech_content.types";
 
 interface ContextTextProps {
   children: React.ReactNode,
@@ -8,33 +7,32 @@ interface ContextTextProps {
 }
 
 interface DefaultCodeProps {
-  clipboard?: string
-  codeContent: codeItemContent
 }
 
-export const CreateJS: FC<ContextTextProps> = ({ children,mode }) => (
-  <span className={'create-js'} style={{fontStyle: mode}}>{children}</span>
+export const CreateJS: FC<ContextTextProps> = ({ children, mode }) => (
+  <span className={'create-js'} style={{ fontStyle: mode }}>{children}</span>
 )
 
-export const JsCode: FC<ContextTextProps> = ({ children,mode }) => (
-  <span className={'js-code'} style={{fontStyle: mode}}>{children}</span>
+export const JsCode: FC<ContextTextProps> = ({ children, mode }) => (
+  <span className={'js-code'} style={{ fontStyle: mode }}>{children}</span>
 )
 
 export const ObjectField: FC<ContextTextProps> = ({ children, mode }) => (
-  <span className={'object-field'} style={{fontStyle: mode}}>{children}</span>
+  <span className={'object-field'} style={{ fontStyle: mode }}>{children}</span>
 )
 
-export const Numbers: FC<ContextTextProps> = ({ children,mode }) => (
-  <span className={'numbers'} style={{fontStyle: mode}}>{children}</span>
+export const Numbers: FC<ContextTextProps> = ({ children, mode }) => (
+  <span className={'numbers'} style={{ fontStyle: mode }}>{children}</span>
 )
 
-export const Commentaries: FC<ContextTextProps> = ({ children,mode }) => (
-  <span className={'commentaries'} style={{fontStyle: mode}}>{children}</span>
+export const Commentaries: FC<ContextTextProps> = ({ children, mode }) => (
+  <span className={'commentaries'} style={{ fontStyle: mode }}>{children}</span>
 )
 
-const DefaultCode: FC<DefaultCodeProps> = ({
+const DefaultCode: FC<DefaultCodeProps & CodeType> = ({
   clipboard,
-  codeContent
+  content,
+  noIndex
 }) => {
   const [copyClipboard, setCopyClipboard] = useState<boolean>(false);
 
@@ -55,15 +53,25 @@ const DefaultCode: FC<DefaultCodeProps> = ({
   return (
     <>
       <div className={'default-code'}>
-        {codeContent.map(({ id, codeItem , className }, index) => (
-          <div key={id} className={'code-indexed-row'}>
-            <div className="code-index">
-              {++index}
-            </div>
-            <div  className={className}>
-              {codeItem}
-            </div>
-          </div>
+        {content.map(({ id, codeItem, className }, index) => (
+          <Fragment key={id}>
+            {noIndex
+              ?
+              <div key={id} className={'code-noIndex'}>
+                <div className={className}>
+                  {codeItem}
+                </div>
+              </div>
+              :
+              <div key={id} className={'code-indexed-row'}>
+                <div className="code-index">
+                  {++index}
+                </div>
+                <div className={className}>
+                  {codeItem}
+                </div>
+              </div>}
+          </Fragment>
         ))}
         {clipboard && <div className="copy" onClick={() => {
           setCopyClipboard(true)

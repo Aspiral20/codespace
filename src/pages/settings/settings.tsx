@@ -1,18 +1,18 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC } from 'react';
 import cn from "classnames";
 import { PHPStorm, Vscode } from "../../components";
 import DownloadSettings from "../../components/download-settings";
+import { v4 as uuid } from 'uuid'
 
-interface SettingsProps {
-  children?: React.ReactNode
-}
+interface SettingsProps {}
 
 
-const Settings: FC<SettingsProps> = ({ children }) => {
+const Settings: FC<SettingsProps> = ({}) => {
 
 
   const rightCards = [
     {
+      id: uuid(),
       logo: <PHPStorm className={'phpstorm-svg'}/>,
       logoName: 'PHPStorm',
       children: <>
@@ -29,6 +29,7 @@ const Settings: FC<SettingsProps> = ({ children }) => {
       </>
     },
     {
+      id: uuid(),
       logo: <Vscode className={'vscode-svg'}/>,
       logoName: 'VS Code',
       children: <>
@@ -51,8 +52,8 @@ const Settings: FC<SettingsProps> = ({ children }) => {
       <div className="info-settings">
       </div>
       <div className="right-content">
-        {rightCards.map(({ logo, logoName, children }) => (
-          <div className="right-settings">
+        {rightCards.map(({ id, logo, logoName, children }) => (
+          <div key={id} className="right-settings">
             <div className="logo-setting">
               {logo}
               <div className="phpstorm-text">{logoName}</div>

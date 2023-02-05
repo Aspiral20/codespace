@@ -1,12 +1,15 @@
 import React, { FC } from 'react';
-import { listItemContent } from "../pages/course_js/content/content_page";
+import { listItemContent } from "../@types/tech_content.types";
 
 interface DefaultListProps {
   list: listItemContent
   type: string
 }
 
-const DefaultList: FC<DefaultListProps> = ({ type, list }) => {
+const DefaultList: FC<DefaultListProps> = ({
+  type,
+  list
+}) => {
   switch (type) {
     case 'ordered':
       return (

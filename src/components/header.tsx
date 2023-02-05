@@ -1,16 +1,19 @@
 import { FC, Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import { getRouter } from "../conf/RouteElements";
-import cn from 'classnames';
 import { useTranslation } from "react-i18next";
+import { v4 as uuid } from 'uuid'
 
-interface HeaderProps {
+interface HeaderProps {}
 
-}
+const menuLinks = [
+  { id: uuid(), path: 'technologies', value: 'technologies' },
+  { id: uuid(), path: 'settings', value: 'settings' },
+  { id: uuid(), path: 'feedback', value: 'feedback' }
+]
 
-const Header: FC<HeaderProps> = ({}) => {
+const Header: FC<HeaderProps> = () => {
   const [openLang, setOpenLang] = useState<boolean>(false);
-  const {t, i18n} = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const lang = [
     { key: 'ro', lang: 'RO' },
@@ -23,32 +26,27 @@ const Header: FC<HeaderProps> = ({}) => {
     <div className='header'>
       <Link to={'/'}>
         <div className="logo">
-          <span className='logo-value'>Java</span><span className='logo-hover'>Script</span><span
-          className="logo-domain">HC</span>
+          <span className='logo-value'>Work</span><span className='logo-hover'>Space</span>
         </div>
       </Link>
       <div className="menu">
-        {getRouter.map(({ id, path, value, index, subRoutes, header }) => (
-          <Fragment key={id}>
-            {value !== '' && header?
-              <div key={id} className={cn('menu-item')}>
-                <Link
-                  // to={path ? subRoutes ? path + '/' + subRoutes[0].path : path : '/'}
-                  to={path ? path : '/'}
-                  className="item"
-                >
-                  {t(`pages.${id}`)}
-                </Link>
-              </div>
-              : null}
-          </Fragment>
+        {menuLinks.map(({ id, path, value }) => (
+          <div key={id} className={'menu-item'}>
+            <Link
+              // to={path ? subRoutes ? path + '/' + subRoutes[0].path : path : '/'}
+              to={path ? path : '/'}
+              className="item"
+            >
+              {t(`pages.${value}`)}
+            </Link>
+          </div>
         ))}
       </div>
       <div className={'language'}>
         <div className="current-lang" onClick={() => {
           setOpenLang(prevState => !prevState)
         }}>
-          {i18n.language}
+          {currentLang}
         </div>
         {openLang &&
           <div className={'change-lang'}>
@@ -57,6 +55,7 @@ const Header: FC<HeaderProps> = ({}) => {
                 <Fragment>
                   {lng.key !== i18n.language && <div key={lng.key} className="lng-item" onClick={() => {
                     i18n.changeLanguage(lng.key)
+                    setCurrentLang(lng.lang)
                     setOpenLang(false)
                   }}>
                     {lng.lang}

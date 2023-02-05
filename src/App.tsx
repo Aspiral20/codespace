@@ -1,13 +1,17 @@
 import React from 'react';
-import { RoutesGenerator, Container } from "./components";
-import * as Sentry from "@sentry/react"
-import { Outlet } from "react-router-dom";
+import { Container, Header, Footer } from "./components";
+import Router from "./router";
 
 function App() {
   return (
-    <>
-      <RoutesGenerator/>
-    </>
+    <Container>
+      <Header/>
+      <div className="content">
+        <Router/>
+      </div>
+      <Footer/>
+    </Container>
+
   );
 }
 

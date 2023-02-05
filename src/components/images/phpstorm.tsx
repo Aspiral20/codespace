@@ -6,7 +6,7 @@ const PHPStorm: FC<React.SVGAttributes<SVGElement>> = ({
 }) => {
   return (
     <svg
-      className={className}
+      className={`phpstorm-svg ${className}`}
       {...rest}
       width="256px"
       height="256px"

@@ -1,7 +1,16 @@
 {
   "pages": {
-    "Home": "Главная",
-    "CourseJS": "JavaScript",
-    "Settings": "Настройки"
+    "home": "Главная",
+    "technologies": "Технологии",
+    "settings": "Настройки",
+    "feedback": "Обратная связь"
+  },
+  "errors": {
+    "not-found": "Данная страница не существует.",
+    "not-found-link": "Перейди на",
+    "not-found-path": "Главную"
+  },
+  "actions": {
+    "navigation": "Навигация"
   }
 }
