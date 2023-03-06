@@ -1,0 +1,55 @@
+$orderedIndexPx: 26px;
+
+@mixin DefaultItem() {
+  position: relative;
+  padding: 4px 0;
+}
+
+.default-list {
+  padding-left: $orderedIndexPx;
+  margin-bottom: 17px;
+
+  .default-item {
+    @include DefaultItem();
+
+    &-unordered {
+      @include DefaultItem();
+
+      .default-circle {
+        position: absolute;
+        left: -15px;
+        top: 11px;
+        @include min-max_width-height(4px);
+        border-radius: 50%;
+        background-color: #e4e4e4;
+      }
+    }
+
+    &-ordered {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: -$orderedIndexPx;
+      }
+    }
+
+    .default-index {
+      position: absolute;
+      left: -$orderedIndexPx;
+    }
+
+    .default-circle {
+      position: absolute;
+      left: -15px;
+      top: 11px;
+      @include min-max_width-height(4px);
+      border-radius: 50%;
+      background-color: #e4e4e4;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "pages": {
+    "home": "Главная",
+    "technologies": "Технологии",
+    "settings": "Настройки",
+    "feedback": "Обратная связь"
+  },
+  "errors": {
+    "not-found": "Данная страница не существует.",
+    "not-found-link": "Перейди на",
+    "not-found-path": "Главную",
+    "internal-server": "Ошибка внутреннего сервера"
+  },
+  "actions": {
+    "navigation": "Навигация"
+  }
+}

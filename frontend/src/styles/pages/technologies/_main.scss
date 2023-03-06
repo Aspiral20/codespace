@@ -1,0 +1,15 @@
+.course_js {
+  display: flex;
+
+  .HCJS-content {
+    position: relative;
+    width: calc(100% - 220px);
+
+    .content_title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 17px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}

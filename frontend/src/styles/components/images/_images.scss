@@ -1,0 +1,29 @@
+.phpstorm-svg {
+  $size: 50px;
+  @include width-height($size);
+  @include min-max_width-height($size);
+}
+
+.vscode-svg {
+  $size: 50px;
+  @include width-height($size);
+  @include min-max_width-height($size);
+}
+
+.back-arrow-svg {
+  $size: 24px;
+  @include width-height($size);
+  @include min-max_width-height($size);
+}
+
+.typescript_icon {
+  $size: 40px;
+  @include width-height($size);
+  @include min-max_width-height($size);
+}
+
+.javascript_icon {
+  $size: 40px;
+  @include width-height($size);
+  @include min-max_width-height($size);
+}

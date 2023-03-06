@@ -1,0 +1,17 @@
+{
+  "pages": {
+    "home": "Acasă",
+    "technologies": "Tehnologii",
+    "settings": "Setări",
+    "feedback": "Feedback"
+  },
+  "errors": {
+    "not-found": "Aceasta pagina nu exista.",
+    "not-found-link": "Treceti",
+    "not-found-path": "Acasă",
+    "internal-server": "Eroare internă de server"
+  },
+  "actions": {
+    "navigation": "Navigare"
+  }
+}

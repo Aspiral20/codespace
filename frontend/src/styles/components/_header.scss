@@ -1,0 +1,119 @@
+.header {
+  @include flex_justify-align(flex, space-between);
+  padding: 0 20px;
+  background-color: #f2f2f2;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  margin: 20px 0;
+  box-shadow: 0 0 2px rgb(0, 0, 0, .3);
+  background-image: -ms-linear-gradient(top, #f2f2f2, #e4e4e4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e4e4e4));
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #e4e4e4);
+  background-image: -o-linear-gradient(top, #f2f2f2, #e4e4e4);
+  background-image: linear-gradient(top, #f2f2f2, #e4e4e4);
+  background-image: -moz-linear-gradient(top, #f2f2f2, #e4e4e4);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#e4e4e4', GradientType=0);
+
+  .logo {
+    cursor: pointer;
+    @include WorldTextFontSize(22px, 20px, 16px);
+
+    &:hover {
+      .logo-value {
+        color: #a45f93;;
+      }
+
+      .logo-hover {
+        color: black;
+      }
+    }
+
+    .logo-value {
+      color: black;
+    }
+
+    .logo-hover {
+      color: #a45f93;
+    }
+
+    .logo-domain {
+      @include WorldTextFontSize(16px, 14px, 14px);
+      color: #8b95a4;
+    }
+  }
+
+  .menu {
+    @include flex_justify-align;
+
+    .menu-item {
+      @include WorldTextFontSize(16px, 14px, 14px);
+      padding: 15px 20px;
+
+      .item {
+        text-shadow: 0 1px 0 white;
+        color: black;
+
+        &:hover {
+          color: #a45f93;
+        }
+      }
+    }
+  }
+
+  .language {
+    @include flex_justify-align;
+    padding: 15px 20px;
+    position: relative;
+
+    .current-lang {
+      @include WorldTextFontSize(16px, 14px, 14px);
+      color: black;
+      text-shadow: 0 1px 0 white;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        color: #a45f93;
+      }
+
+      &.active {
+        color: #a45f93;
+      }
+    }
+
+    .change-lang {
+      position: absolute;
+      @include min-max_width(58px);
+      left: calc(50% - 29px);
+      top: calc(100% + 7px);
+      padding: 10px 0;
+      text-align: center;
+      background-color: rgba(43, 43, 43, 0.5);
+      border-radius: 12px;
+      z-index: 1;
+      display: none;
+
+      .lng-item {
+        cursor: pointer;
+
+        &:hover {
+          color: #a45f93;
+        }
+
+        padding: 3px 0;
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

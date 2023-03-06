@@ -1,0 +1,17 @@
+{
+  "pages": {
+    "home": "Home",
+    "technologies": "Technologies",
+    "settings": "Settings",
+    "feedback": "Feedback"
+  },
+  "errors": {
+    "not-found": "This page does not exist.",
+    "not-found-link": "Go",
+    "not-found-path": "Home",
+    "internal-server": "Internal Server Error"
+  },
+  "actions": {
+    "navigation": "Navigation"
+  }
+}
