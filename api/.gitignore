@@ -1,0 +1,11 @@
+node_modules
+.keystone/admin
+keystone.db
+*.log
+
+# dotenv environment variable files
+.env*
+!.env.example
+
+# JetBrains
+.idea

@@ -34,6 +34,8 @@ const Technologies: FC<TechnologiesProps> = () => {
 	// Res API
 	const { loading, error, data } = useQuery(GET_ONLY_TECHNOLOGIES)
 
+  console.log(error)
+
 	// From API
 	const technologies: TechnologiesType = data && data.technologies
 	const leftContent = useGetLeftContent(technologies)

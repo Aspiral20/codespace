@@ -4,13 +4,14 @@ interface HomeProps {
 
 }
 
-const Home: FC<HomeProps> = ({}) => {
+const Home: FC<HomeProps> = () => {
 	return (
 		<>
 			<div className={"home"}>
 				<div className={"home-container"}>
 					<h3 className="title">
-						Aspiral20's Workspace
+            CodeSpace
+						{/*Aspiral20's CodeSpace*/}
 					</h3>
 				</div>
 			</div>

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "cd frontend && npm run build",
-    "dev": "concurrently \"cd frontend && npm run dev\" \"cd api && npm run dev\"",
+    "dev": "concurrently \"cd frontend && yarn && npm run dev\" \"cd api && yarn && npm run dev\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/Aspiral20/my-workspace#readme",
   "dependencies": {
-    "bcrypt": "^5.1.0",
     "concurrently": "^7.6.0"
   }
 }

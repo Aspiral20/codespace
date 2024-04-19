@@ -31,7 +31,7 @@ const Header: FC<HeaderProps> = () => {
 		<div className='header'>
 			<Link to={'/'}>
 				<div className="logo">
-					<span className='logo-value'>Work</span><span className='logo-hover'>Space</span>
+					<span className='logo-value'>Code</span><span className='logo-hover'>Space</span>
 				</div>
 			</Link>
 			<div className="menu">
